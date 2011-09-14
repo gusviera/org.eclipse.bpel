@@ -115,8 +115,7 @@ public class XPathExpressionEditor extends AbstractExpressionEditor {
 	 * Create controls ..
 	 */
 	@Override
-	public void createControls(Composite parent, BPELPropertySection aSection) {
-		super.createControls(parent, aSection);		
+	public void createControls(Composite parent) {
 		createEditor(parent);
 	}
 

@@ -12,7 +12,6 @@ package org.eclipse.bpel.ui.expressions;
 
 import org.eclipse.bpel.ui.editors.TextEditor;
 import org.eclipse.bpel.ui.editors.TextEditorInput;
-import org.eclipse.bpel.ui.properties.BPELPropertySection;
 import org.eclipse.bpel.ui.properties.TextSection;
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.swt.SWT;
@@ -63,8 +62,7 @@ public class DefaultExpressionEditor extends AbstractExpressionEditor {
 	 */
 	
 	@Override
-	public void createControls(Composite parent, BPELPropertySection aSection) {
-		super.createControls(parent, aSection);
+	public void createControls(Composite parent) {
 		createEditor(parent);
 	}
 

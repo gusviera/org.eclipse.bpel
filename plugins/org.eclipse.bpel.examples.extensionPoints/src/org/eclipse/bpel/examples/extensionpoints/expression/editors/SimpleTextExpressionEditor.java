@@ -2,16 +2,13 @@ package org.eclipse.bpel.examples.extensionpoints.expression.editors;
 
 
 import org.eclipse.bpel.ui.expressions.AbstractExpressionEditor;
-import org.eclipse.bpel.ui.properties.BPELPropertySection;
 import org.eclipse.bpel.ui.properties.TextSection;
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IPropertyListener;
-import org.eclipse.ui.texteditor.AbstractDecoratedTextEditor;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
 
 /**
@@ -58,8 +55,7 @@ public class SimpleTextExpressionEditor extends AbstractExpressionEditor {
 	 */
 	
 	@Override
-	public void createControls (Composite parent, BPELPropertySection aSection) {
-		super.createControls(parent, aSection);
+	public void createControls (Composite parent) {
 		createEditor(parent);
 	}
 

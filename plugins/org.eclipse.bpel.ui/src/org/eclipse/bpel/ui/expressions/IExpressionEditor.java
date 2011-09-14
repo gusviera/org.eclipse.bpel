@@ -11,7 +11,6 @@
 package org.eclipse.bpel.ui.expressions;
 
 import org.eclipse.bpel.ui.commands.CompoundCommand;
-import org.eclipse.bpel.ui.properties.BPELPropertySection;
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.swt.widgets.Composite;
 
@@ -38,7 +37,7 @@ public interface IExpressionEditor {
 	 * @param parent the parent composite
 	 * @param section the section
 	 */
-	void createControls(Composite parent, BPELPropertySection section);
+	void createControls(Composite parent);
 
 	/**
 	 * Dispose of the editor.

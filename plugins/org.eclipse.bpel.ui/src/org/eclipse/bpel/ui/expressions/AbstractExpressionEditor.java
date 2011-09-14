@@ -54,9 +54,7 @@ public abstract class AbstractExpressionEditor implements IExpressionEditor {
 	 * @see org.eclipse.bpel.ui.expressions.IExpressionEditor#createControls(org.eclipse.swt.widgets.Composite,
 	 *      org.eclipse.bpel.ui.properties.BPELPropertySection)
 	 */
-	public void createControls(Composite parent, BPELPropertySection aSection) {
-		this.fSection = aSection;
-	}
+	public abstract void createControls(Composite parent);
 
 	/**
 	 * @see org.eclipse.bpel.ui.expressions.IExpressionEditor#addListener(org.eclipse.bpel.ui.expressions.IExpressionEditor.Listener)
