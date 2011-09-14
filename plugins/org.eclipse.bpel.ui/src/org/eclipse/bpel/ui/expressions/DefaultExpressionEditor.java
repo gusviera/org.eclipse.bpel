@@ -12,7 +12,6 @@ package org.eclipse.bpel.ui.expressions;
 
 import org.eclipse.bpel.ui.editors.TextEditor;
 import org.eclipse.bpel.ui.editors.TextEditorInput;
-import org.eclipse.bpel.ui.properties.TextSection;
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.FocusAdapter;
@@ -23,7 +22,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IPropertyListener;
-import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
+import org.eclipse.ui.forms.widgets.FormToolkit;
 
 
 /**
@@ -62,7 +61,8 @@ public class DefaultExpressionEditor extends AbstractExpressionEditor {
 	 */
 	
 	@Override
-	public void createControls(Composite parent) {
+	public void createControls(Composite parent, FormToolkit toolkit) {
+		super.createControls(parent, toolkit);
 		createEditor(parent);
 	}
 
@@ -90,7 +90,6 @@ public class DefaultExpressionEditor extends AbstractExpressionEditor {
 	protected void createEditor(Composite parent) {
 		IEditorInput input = new TextEditorInput( fBody, getModelObject(), getExprType() );
 		
-		TabbedPropertySheetWidgetFactory wf = getWidgetFactory();
 		
 		editorComposite = wf.createComposite(parent, SWT.BORDER);
 		editorComposite.setLayout( new FillLayout() );		
@@ -151,7 +150,7 @@ public class DefaultExpressionEditor extends AbstractExpressionEditor {
 		if (propertyListener == null) {
 			propertyListener = new IPropertyListener() {
 				public void propertyChanged(Object source, int propId) {
-					if (!updating && propId == IEditorPart.PROP_DIRTY && editor.isDirty() && !((TextSection)fSection).isExecutingStoreCommand()) {
+					if (!updating && propId == IEditorPart.PROP_DIRTY && editor.isDirty()) {
 						notifyChanged();
 					}
 				}
