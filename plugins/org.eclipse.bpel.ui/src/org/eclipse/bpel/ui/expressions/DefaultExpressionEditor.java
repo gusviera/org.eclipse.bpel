@@ -24,6 +24,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IPropertyListener;
+import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
 
 
@@ -229,5 +230,15 @@ public class DefaultExpressionEditor extends AbstractExpressionEditor {
 		if (editor != null) {
 			editor.markAsClean();
 		}
+	}
+
+
+	/* (non-Javadoc)
+	 * @see org.eclipse.bpel.ui.expressions.IExpressionEditor#createControls(org.eclipse.swt.widgets.Composite, org.eclipse.ui.forms.widgets.FormToolkit)
+	 */
+	@Override
+	public void createControls(Composite composite, FormToolkit tk) {
+		// TODO Auto-generated method stub
+		
 	}
 }

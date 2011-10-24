@@ -48,6 +48,7 @@ import org.eclipse.swt.widgets.Layout;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IPropertyListener;
 import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
 
 
@@ -284,9 +285,6 @@ public class XPathExpressionEditor extends AbstractExpressionEditor {
 					textEditorInput.setEditorContent ( BPELDateTimeHelpers.createXPathDateTime(values, false) , getModelObject() );
 				}
 				
-				if (!((TextSection) fSection).isExecutingStoreCommand()) {
-					notifyChanged();
-				}
 			}
 
 			public void widgetDefaultSelected(SelectionEvent e) {
@@ -345,10 +343,6 @@ public class XPathExpressionEditor extends AbstractExpressionEditor {
 					textEditorInput.setEditorContent( BPELDateTimeHelpers.createXPathDuration(duration) , getModelObject() );
 				}
 			
-				// 
-			 	if (!((TextSection)fSection).isExecutingStoreCommand() ) {
-			 		notifyChanged();
-			 	}
 			 }
 			 public void widgetDefaultSelected(SelectionEvent e) { }
 	    });
@@ -658,6 +652,15 @@ public class XPathExpressionEditor extends AbstractExpressionEditor {
 				compoundCommand.add(new SetNamespaceMappingCommand(eObj, fn.getNamespace(), fn.getPrefix() )) ;
 			}
 		}
+		
+	}
+
+	/* (non-Javadoc)
+	 * @see org.eclipse.bpel.ui.expressions.IExpressionEditor#createControls(org.eclipse.swt.widgets.Composite, org.eclipse.ui.forms.widgets.FormToolkit)
+	 */
+	@Override
+	public void createControls(Composite composite, FormToolkit tk) {
+		// TODO Auto-generated method stub
 		
 	}
 

@@ -14,6 +14,7 @@ import org.eclipse.bpel.ui.commands.CompoundCommand;
 import org.eclipse.bpel.ui.properties.BPELPropertySection;
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.ui.forms.widgets.FormToolkit;
 
 
 /**
@@ -152,4 +153,10 @@ public interface IExpressionEditor {
 	 * Tells the editor to consider itself clean.
 	 */
 	void markAsClean();
+
+	/**
+	 * @param composite
+	 * @param tk
+	 */
+	public void createControls(Composite composite, FormToolkit tk);
 }
