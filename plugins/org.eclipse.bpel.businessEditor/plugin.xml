@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+   <extension point="org.eclipse.team.core.fileTypes" id="repo-ftype">
+      <?gmfgen generated="true"?>
+      <fileTypes type="text" extension="bpel_diagram"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
+      <?gmfgen generated="true"?>
+      <parser
+         type="bpel_diagram"
+         class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
+      </parser>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors" id="gmf-editor">
+      <?gmfgen generated="true"?>
+      <editor
+         id="org.eclipse.bpel.businessEditor.diagram.part.BpelDiagramEditorID"
+         name="%editorName"
+         icon="icons/obj16/BPELDiagramFile.gif"
+         extensions="bpel_diagram"
+         default="true"
+         class="org.eclipse.bpel.businessEditor.diagram.part.BpelDiagramEditor"
+         matchingStrategy="org.eclipse.bpel.businessEditor.diagram.part.BpelMatchingStrategy"
+         contributorClass="org.eclipse.bpel.businessEditor.diagram.part.BpelDiagramActionBarContributor">
+      </editor>
+   </extension>
+   
+   <extension point="org.eclipse.ui.contexts" id="ui-context">
+      <?gmfgen generated="true"?>
+      <context
+         description="%context.description"
+         id="org.eclipse.bpel.businessEditor.diagram.ui.diagramContext"
+         name="%context.name"
+         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
+      </context>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+      <?gmfgen generated="true"?>
+  	  <wizard
+  	     name="%newWizardName"
+  	     icon="icons/obj16/BPELDiagramFile.gif"
+  	     category="org.eclipse.ui.Examples"
+  	     class="org.eclipse.bpel.businessEditor.diagram.part.BpelCreationWizard"
+  	     id="org.eclipse.bpel.businessEditor.diagram.part.BpelCreationWizardID">
+  	  	 <description>%newWizardDesc</description>  
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.popupMenus" id="init-diagram-action">
+      <?gmfgen generated="true"?>
+      <objectContribution
+            id="org.eclipse.bpel.diagram.InitDiagram"
+            nameFilter="*.bpel"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               label="%initDiagramActionLabel"
+               class="org.eclipse.bpel.businessEditor.diagram.part.BpelInitDiagramFileAction"
+               menubarPath="additions"
+               enablesFor="1"
+               id="org.eclipse.bpel.diagram.InitDiagramAction">
+         </action>
+      </objectContribution>
+   </extension>
+	
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
+      <?gmfgen generated="true"?>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
+         id="BpelPresentation">
+         <Priority name="Lowest"/>
+         <ViewId id="org.eclipse.bpel.businessEditor.diagram.part.BpelDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="delete"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart">
+               <GlobalActionId actionId="save"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="save">
+               </GlobalActionId>
+            </ElementType>        
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
+         id="BpelPresentationIDE">
+         <Priority name="Lowest"/>
+         <ViewId id="org.eclipse.bpel.businessEditor.diagram.part.BpelDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="bookmark"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+            class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
+            id="BpelRender">
+         <Priority name="Lowest"/>
+         <ViewId id="org.eclipse.bpel.businessEditor.diagram.part.BpelDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="cut"/>
+               <GlobalActionId actionId="copy"/>
+               <GlobalActionId actionId="paste"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+   </extension>
+
+
+   <extension point="org.eclipse.core.runtime.preferences" id="prefs">
+      <?gmfgen generated="true"?>
+      <initializer class="org.eclipse.bpel.businessEditor.diagram.preferences.DiagramPreferenceInitializer"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.preferencePages" id="prefpages">
+      <?gmfgen generated="true"?>
+      <page
+            id="org.eclipse.bpel.diagram.general"
+            name="%prefpage.org.eclipse.bpel.diagram.general"
+            class="org.eclipse.bpel.businessEditor.diagram.preferences.DiagramGeneralPreferencePage">
+      </page>
+      <page
+            id="org.eclipse.bpel.diagram.appearance"
+            name="%prefpage.org.eclipse.bpel.diagram.appearance"
+            category="org.eclipse.bpel.diagram.general"
+            class="org.eclipse.bpel.businessEditor.diagram.preferences.DiagramAppearancePreferencePage">
+      </page>
+      <page
+            id="org.eclipse.bpel.diagram.connections"
+            name="%prefpage.org.eclipse.bpel.diagram.connections"
+            category="org.eclipse.bpel.diagram.general"
+            class="org.eclipse.bpel.businessEditor.diagram.preferences.DiagramConnectionsPreferencePage">
+      </page>
+      <page
+            id="org.eclipse.bpel.diagram.printing"
+            name="%prefpage.org.eclipse.bpel.diagram.printing"
+            category="org.eclipse.bpel.diagram.general"
+            class="org.eclipse.bpel.businessEditor.diagram.preferences.DiagramPrintingPreferencePage">
+      </page>
+      <page
+            id="org.eclipse.bpel.diagram.rulersAndGrid"
+            name="%prefpage.org.eclipse.bpel.diagram.rulersAndGrid"
+            category="org.eclipse.bpel.diagram.general"
+            class="org.eclipse.bpel.businessEditor.diagram.preferences.DiagramRulersAndGridPreferencePage">
+      </page>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
+      <?gmfgen generated="true"?>
+      <propertyContributor
+            contributorId="org.eclipse.bpel.diagram"
+            labelProvider="org.eclipse.bpel.businessEditor.diagram.sheet.BpelSheetLabelProvider">
+         <propertyCategory category="domain"/>
+         <propertyCategory category="visual"/>
+         <propertyCategory category="extra"/>
+      </propertyContributor>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
+      <?gmfgen generated="true"?>   
+      <propertyTabs contributorId="org.eclipse.bpel.diagram">
+         <propertyTab
+             category="visual"
+             id="property.tab.AppearancePropertySection"
+             label="%tab.appearance"/>
+          <propertyTab
+             category="visual"
+             id="property.tab.DiagramPropertySection"
+             label="%tab.diagram"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.domain"
+             label="%tab.domain"/>
+      </propertyTabs>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
+      <?gmfgen generated="true"?>   
+      <propertySections contributorId="org.eclipse.bpel.diagram">
+         <propertySection id="property.section.ConnectorAppearancePropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>
+         <propertySection id="property.section.ShapeColorAndFontPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ShapeEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ShapeColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection> 
+         <propertySection id="property.section.DiagramColorsAndFontsPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.DiagramColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>     
+         <propertySection id="property.section.RulerGridPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
+            tab="property.tab.DiagramPropertySection">
+         </propertySection>     
+         <propertySection
+            id="property.section.domain" 
+            tab="property.tab.domain"
+            class="org.eclipse.bpel.businessEditor.diagram.sheet.BpelPropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="org.eclipse.bpel.businessEditor.diagram.navigator.BpelAbstractNavigatorItem"/>
+         </propertySection>
+      </propertySections>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
+      <?gmfgen generated="true"?>
+      <viewProvider class="org.eclipse.bpel.businessEditor.diagram.providers.BpelViewProvider">
+         <Priority name="Lowest"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Bpel"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,3001,3002,3003,3004"/>
+      </viewProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
+      <?gmfgen generated="true"?>
+      <editpartProvider class="org.eclipse.bpel.businessEditor.diagram.providers.BpelEditPartProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
+            <method name="getType()" value="Bpel"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
+            <method name="getType()" value="2001,3001,3002,3003,3004"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
+            <method name="getType()" value=""/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
+            <method name="getType()" value=""/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
+            <method name="getType()" value="7001,7002"/>
+         </object>
+         <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
+      </editpartProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
+      <?gmfgen generated="true"?>
+      <modelingAssistantProvider class="org.eclipse.bpel.businessEditor.diagram.providers.BpelModelingAssistantProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.bpel.businessEditor.diagram.edit.parts.ProcessEditPart" id="Process_1000"/>
+         <object class="org.eclipse.bpel.businessEditor.diagram.edit.parts.SequenceEditPart" id="Sequence_2001"/>
+         <context elements="Process_1000,Sequence_2001"/>
+      </modelingAssistantProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
+      <?gmfgen generated="true"?>
+      <IconProvider class="org.eclipse.bpel.businessEditor.diagram.providers.BpelIconProvider">
+         <Priority name="Low"/>
+      </IconProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <?gmfgen generated="true"?>
+      <metamodel nsURI="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+         <metamodelType
+               id="org.eclipse.bpel.diagram.Process_1000"
+               name="%metatype.name.Process_1000"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Process"
+               edithelper="org.eclipse.bpel.businessEditor.diagram.edit.helpers.ProcessEditHelper">
+            <param name="semanticHint" value="1000"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+         <metamodelType
+               id="org.eclipse.bpel.diagram.Sequence_2001"
+               name="%metatype.name.Sequence_2001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Sequence"
+               edithelper="org.eclipse.bpel.businessEditor.diagram.edit.helpers.SequenceEditHelper">
+            <param name="semanticHint" value="2001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+         <metamodelType
+               id="org.eclipse.bpel.diagram.Receive_3001"
+               name="%metatype.name.Receive_3001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Receive"
+               edithelper="org.eclipse.bpel.businessEditor.diagram.edit.helpers.ReceiveEditHelper">
+            <param name="semanticHint" value="3001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+         <metamodelType
+               id="org.eclipse.bpel.diagram.If_3002"
+               name="%metatype.name.If_3002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="If"
+               edithelper="org.eclipse.bpel.businessEditor.diagram.edit.helpers.IfEditHelper">
+            <param name="semanticHint" value="3002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+         <specializationType
+               id="org.eclipse.bpel.diagram.Sequence_3003"
+               name="%metatype.name.Sequence_3003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.bpel.diagram.Sequence_2001"/>
+            <param name="semanticHint" value="3003"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+         <specializationType
+               id="org.eclipse.bpel.diagram.Sequence_3004"
+               name="%metatype.name.Sequence_3004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.bpel.diagram.Sequence_2001"/>
+            <param name="semanticHint" value="3004"/>
+         </specializationType>
+      </metamodel>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <?gmfgen generated="true"?>
+      <clientContext id="org.eclipse.bpel.diagram.TypeContext">
+         <enablement>
+            <test
+               property="org.eclipse.gmf.runtime.emf.core.editingDomain"
+               value="org.eclipse.bpel.diagram.EditingDomain"/>
+         </enablement>
+      </clientContext> 
+      <binding context="org.eclipse.bpel.diagram.TypeContext">
+         <elementType ref="org.eclipse.bpel.diagram.Process_1000"/>
+         <elementType ref="org.eclipse.bpel.diagram.Sequence_2001"/>
+         <elementType ref="org.eclipse.bpel.diagram.Receive_3001"/>
+         <elementType ref="org.eclipse.bpel.diagram.If_3002"/>
+         <elementType ref="org.eclipse.bpel.diagram.Sequence_3003"/>
+         <elementType ref="org.eclipse.bpel.diagram.Sequence_3004"/>
+         <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
+      </binding>
+   </extension>
+	   <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isURIEditorInput">
+      <?gmfgen generated="true"?>
+       <propertyTester
+           id="org.eclipse.bpel.diagram.URIEditorInputPropertyTester"
+           type="org.eclipse.emf.common.ui.URIEditorInput"
+           namespace="org.eclipse.bpel.diagram"
+           properties="isURIEditorInput"
+           class="org.eclipse.bpel.businessEditor.diagram.part.BpelUriEditorInputTester">
+       </propertyTester>
+   </extension>
+
+	   <extension point="org.eclipse.ui.navigator.viewer" id="navigator-viewbinding">
+      <?gmfgen generated="true"?>
+      <viewerContentBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <contentExtension pattern="org.eclipse.bpel.diagram.resourceContent"/>
+			<contentExtension pattern="org.eclipse.bpel.diagram.domainResourceContent"/>
+            <contentExtension pattern="org.eclipse.bpel.diagram.navigatorLinkHelper"/>
+         </includes>
+      </viewerContentBinding>
+      <viewerActionBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <actionExtension pattern="org.eclipse.bpel.diagram.navigatorActionProvider"/>
+         </includes>
+      </viewerActionBinding>
+   </extension>
+
+   <extension point="org.eclipse.ui.navigator.navigatorContent" id="navigator-content">
+      <?gmfgen generated="true"?>
+      <navigatorContent
+            id="org.eclipse.bpel.diagram.resourceContent" 
+            name="%navigatorContentName" 
+            priority="normal" 
+            contentProvider="org.eclipse.bpel.businessEditor.diagram.navigator.BpelNavigatorContentProvider" 
+            labelProvider="org.eclipse.bpel.businessEditor.diagram.navigator.BpelNavigatorLabelProvider"
+            icon="icons/obj16/BPELDiagramFile.gif"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="bpel_diagram"/>
+               </and>
+               <instanceof value="org.eclipse.bpel.businessEditor.diagram.navigator.BpelAbstractNavigatorItem"/>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <or>
+         	   <instanceof value="org.eclipse.bpel.businessEditor.diagram.navigator.BpelAbstractNavigatorItem"/>
+            </or>
+         </possibleChildren>
+         <commonSorter 
+               id="org.eclipse.bpel.diagram.navigatorSorter" 
+               class="org.eclipse.bpel.businessEditor.diagram.navigator.BpelNavigatorSorter">
+            <parentExpression>
+               <or>
+	              <and>
+    	             <instanceof value="org.eclipse.core.resources.IFile"/>
+        	         <test property="org.eclipse.core.resources.extension" value="bpel_diagram"/>
+                  </and>
+                  <instanceof value="org.eclipse.bpel.businessEditor.diagram.navigator.BpelAbstractNavigatorItem"/>
+               </or>
+            </parentExpression>
+         </commonSorter>
+      </navigatorContent>
+      <navigatorContent
+            id="org.eclipse.bpel.diagram.domainResourceContent" 
+            name="%domainNavigatorContentName" 
+            priority="normal" 
+            contentProvider="org.eclipse.bpel.businessEditor.diagram.navigator.BpelDomainNavigatorContentProvider" 
+            labelProvider="org.eclipse.bpel.businessEditor.diagram.navigator.BpelDomainNavigatorLabelProvider"
+            icon="icons/obj16/BPELDiagramFile.gif"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="bpel"/>
+               </and>
+               <instanceof value="org.eclipse.bpel.businessEditor.diagram.navigator.BpelDomainNavigatorItem"/>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <instanceof value="org.eclipse.bpel.businessEditor.diagram.navigator.BpelDomainNavigatorItem"/>
+         </possibleChildren>
+      </navigatorContent>
+      <actionProvider
+            id="org.eclipse.bpel.diagram.navigatorActionProvider"
+            class="org.eclipse.bpel.businessEditor.diagram.navigator.BpelNavigatorActionProvider">
+         <enablement>
+            <or>
+               <instanceof value="org.eclipse.bpel.businessEditor.diagram.navigator.BpelAbstractNavigatorItem"/>
+            </or>
+         </enablement>
+      </actionProvider>
+   </extension>
+   
+	   <extension point="org.eclipse.ui.navigator.linkHelper" id="navigator-linkhelper">
+      <?gmfgen generated="true"?>
+      <linkHelper
+            id="org.eclipse.bpel.diagram.navigatorLinkHelper"
+            class="org.eclipse.bpel.businessEditor.diagram.navigator.BpelNavigatorLinkHelper">
+         <editorInputEnablement>
+            <and>
+               <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
+               <test property="org.eclipse.bpel.diagram.isURIEditorInput"/>
+            </and>
+         </editorInputEnablement>
+         <selectionEnablement>
+            <instanceof value="org.eclipse.bpel.businessEditor.diagram.navigator.BpelAbstractNavigatorItem"/>
+         </selectionEnablement>
+      </linkHelper>
+   </extension>
+   <extension point="org.eclipse.ui.commands" id="update-cmd">
+      <?gmfgen generated="true"?>
+      <command
+         categoryId="org.eclipse.ui.category.edit"
+         defaultHandler="org.eclipse.bpel.businessEditor.diagram.part.BpelDiagramUpdateCommand"
+         description="%update.diagram.description"
+         id="org.eclipse.bpel.businessEditor.diagram.updateDiagram"
+         name="%update.diagram.name"/>
+   </extension>
+   
+   <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
+      <?gmfgen generated="true"?>
+      <key 
+         commandId="org.eclipse.bpel.businessEditor.diagram.updateDiagram"
+         contextId="org.eclipse.bpel.businessEditor.diagram.ui.diagramContext"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="F5"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.menus" id="context-menus">
+      <?gmfgen generated="true"?>
+      <!-- menuContribution locationURI="menu:org.eclipse.ui.main.menu?after=">
+      </menuContribution>
+      <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=">
+      </menuContribution -->
+      <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
+         <command commandId="org.eclipse.bpel.diagram.LoadResourceAction">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="org.eclipse.bpel.businessEditor.diagram.part.BpelDiagramEditorID"/></with>
+                  <with variable="selection"><iterate ifEmpty="false"> 
+                     <instanceof value="org.eclipse.bpel.businessEditor.diagram.edit.parts.ProcessEditPart"/>
+                  </iterate></with>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
+      <?gmfgen generated="true"?>
+      <category id="org.eclipse.bpel.businessEditor.diagram.part.BpelDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <command id="org.eclipse.bpel.diagram.LoadResourceAction"
+         name="Load Resource"
+         categoryId="org.eclipse.bpel.businessEditor.diagram.part.BpelDiagramEditorID"
+         defaultHandler="org.eclipse.bpel.businessEditor.diagram.part.LoadResourceAction"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.handlers" id="menu-handlers">
+      <?gmfgen generated="true"?>
+   </extension>
+
+   <!-- optionally, specify keybindings -->
+</plugin>

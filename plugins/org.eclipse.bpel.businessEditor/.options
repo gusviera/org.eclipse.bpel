@@ -1,0 +1,7 @@
+# Tracing options for the org.eclipse.bpel.diagram plug-in
+
+# Common issues
+org.eclipse.bpel.diagram/debug=false
+
+# Visual IDs
+org.eclipse.bpel.diagram/debug/visualID=false
