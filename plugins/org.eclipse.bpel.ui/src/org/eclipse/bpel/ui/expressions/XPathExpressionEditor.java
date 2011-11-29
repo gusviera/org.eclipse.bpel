@@ -25,7 +25,6 @@ import org.eclipse.bpel.ui.editors.xpath.XPathTextEditor;
 import org.eclipse.bpel.ui.properties.BPELPropertySection;
 import org.eclipse.bpel.ui.properties.DateTimeSelector;
 import org.eclipse.bpel.ui.properties.DurationSelector;
-import org.eclipse.bpel.ui.properties.TextSection;
 import org.eclipse.bpel.ui.util.BPELDateTimeHelpers;
 import org.eclipse.bpel.ui.util.BPELUtil;
 import org.eclipse.core.resources.IMarker;
@@ -48,7 +47,7 @@ import org.eclipse.swt.widgets.Layout;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IPropertyListener;
 import org.eclipse.ui.PlatformUI;
-import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
+import org.eclipse.ui.forms.widgets.FormToolkit;
 
 
 /**
@@ -115,22 +114,20 @@ public class XPathExpressionEditor extends AbstractExpressionEditor {
 	 * Create controls ..
 	 */
 	@Override
-	public void createControls(Composite parent, BPELPropertySection aSection) {
-		super.createControls(parent, aSection);		
+	public void createControls(Composite parent, FormToolkit tk) {
+		super.createControls(parent, tk);		
 		createEditor(parent);
 	}
 
 	protected void createEditor(Composite parent) {
 
-		TabbedPropertySheetWidgetFactory wf = getWidgetFactory();
-
-		this.mainComposite = wf.createComposite( parent );
+		this.mainComposite = tk.createComposite( parent );
 		FormLayout layout = new FormLayout();
 		layout.marginWidth = layout.marginHeight = 0;
 		mainComposite.setLayout(layout);
 		mainComposite.setBackground(BPELUIPlugin.INSTANCE.getColorRegistry()
 				.get(IBPELUIConstants.COLOR_WHITE));
-		comboLabel = wf.createLabel(mainComposite,
+		comboLabel = tk.createLabel(mainComposite,
 				Messages.XPathExpressionEditor_Expression_Type_2);
 
 		combo = new Combo(mainComposite, SWT.BORDER | SWT.READ_ONLY | SWT.FLAT);
@@ -164,7 +161,7 @@ public class XPathExpressionEditor extends AbstractExpressionEditor {
 		// The editor composite will contain one of N editors.
 		// We use stack layout, because only one editor is visible at a time.
 
-		editorComposite = wf.createComposite(mainComposite);
+		editorComposite = tk.createComposite(mainComposite);
 		editorComposite.setLayout(new StackLayout());
 
 		data = new FormData();
@@ -209,9 +206,7 @@ public class XPathExpressionEditor extends AbstractExpressionEditor {
 		}
 
 		// otherwise create it ...
-		TabbedPropertySheetWidgetFactory wf = getWidgetFactory();
-				
-		textEditorComposite = wf.createComposite(editorComposite,SWT.BORDER);
+		textEditorComposite = tk.createComposite(editorComposite,SWT.BORDER);
 		textEditorComposite.setLayout(new FillLayout());
 		textEditor = (XPathTextEditor) createEditor(
 				XPathTextEditor.XPATH_EDITOR_ID,
@@ -240,17 +235,15 @@ public class XPathExpressionEditor extends AbstractExpressionEditor {
 			return dateTimeEditorComposite;
 		}
 
-		TabbedPropertySheetWidgetFactory wf = getWidgetFactory();
-
-		dateTimeEditorComposite = wf.createComposite(editorComposite, SWT.NONE);
+		dateTimeEditorComposite = tk.createComposite(editorComposite, SWT.NONE);
 
 		FormLayout layout = new FormLayout();
 		layout.marginWidth = layout.marginHeight = 0;
 		dateTimeEditorComposite.setLayout(layout);
 
-		Label label = wf.createLabel(dateTimeEditorComposite,
+		Label label = tk.createLabel(dateTimeEditorComposite,
 				Messages.XPathExpressionEditor_Date_Time_UTC_3);
-		dateTimeSelector = new DateTimeSelector(wf, dateTimeEditorComposite,
+		dateTimeSelector = new DateTimeSelector(tk, dateTimeEditorComposite,
 				SWT.NONE, BPELDateTimeHelpers.yearMin,
 				BPELDateTimeHelpers.yearMax);
 
@@ -283,10 +276,6 @@ public class XPathExpressionEditor extends AbstractExpressionEditor {
 					int[] values = dateTimeSelector.getValues();         		        
 					textEditorInput.setEditorContent ( BPELDateTimeHelpers.createXPathDateTime(values, false) , getModelObject() );
 				}
-				
-				if (!((TextSection) fSection).isExecutingStoreCommand()) {
-					notifyChanged();
-				}
 			}
 
 			public void widgetDefaultSelected(SelectionEvent e) {
@@ -312,14 +301,13 @@ public class XPathExpressionEditor extends AbstractExpressionEditor {
 			return durationEditorComposite;
 		}
 		
-	    TabbedPropertySheetWidgetFactory wf = getWidgetFactory();
-	    durationEditorComposite = wf.createComposite(editorComposite, SWT.NONE);
+	    durationEditorComposite = tk.createComposite(editorComposite, SWT.NONE);
 	    FormLayout layout = new FormLayout();
 	    layout.marginWidth = layout.marginHeight = 0;
 	    durationEditorComposite.setLayout(layout);
 	    
-	    Label label = wf.createLabel(durationEditorComposite, Messages.XPathExpressionEditor_Duration_4); 
-	    durationSelector = new DurationSelector(wf, durationEditorComposite, SWT.NONE);
+	    Label label = tk.createLabel(durationEditorComposite, Messages.XPathExpressionEditor_Duration_4); 
+	    durationSelector = new DurationSelector(tk, durationEditorComposite, SWT.NONE);
 	    
 	    FormData data = new FormData();
 	    data.top = new FormAttachment(0, 10);
@@ -344,11 +332,6 @@ public class XPathExpressionEditor extends AbstractExpressionEditor {
 					int[] duration = durationSelector.getValues();         		        
 					textEditorInput.setEditorContent( BPELDateTimeHelpers.createXPathDuration(duration) , getModelObject() );
 				}
-			
-				// 
-			 	if (!((TextSection)fSection).isExecutingStoreCommand() ) {
-			 		notifyChanged();
-			 	}
 			 }
 			 public void widgetDefaultSelected(SelectionEvent e) { }
 	    });

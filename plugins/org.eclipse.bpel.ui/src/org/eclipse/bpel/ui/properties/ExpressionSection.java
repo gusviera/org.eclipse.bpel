@@ -679,7 +679,7 @@ public abstract class ExpressionSection extends TextSection {
 		}
 			
 		editorLanguage = language;
-		fEditor.createControls(parent, this);
+		fEditor.createControls(parent, this.getWidgetFactory());
 		
 		fEditor.addListener(new IExpressionEditor.Listener() {
 			public void notifyChanged() {
