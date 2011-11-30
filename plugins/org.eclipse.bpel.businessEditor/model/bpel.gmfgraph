@@ -2,11 +2,63 @@
 <gmfgraph:Canvas xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="">
+    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="Sequence">
   <figures>
     <figures
         xsi:type="gmfgraph:Polygon"
-        name="diamond">
+        name="ifDiamond"
+        lineWidth="3">
+      <layout
+          xsi:type="gmfgraph:XYLayout"/>
+      <foregroundColor
+          xsi:type="gmfgraph:ConstantColor"
+          value="blue"/>
+      <backgroundColor
+          xsi:type="gmfgraph:ConstantColor"
+          value="lightBlue"/>
+      <preferredSize
+          dx="40"
+          dy="40"/>
+      <children
+          xsi:type="gmfgraph:Polyline"
+          lineWidth="2">
+        <layoutData
+            xsi:type="gmfgraph:XYLayoutData">
+          <topLeft
+              x="13"
+              y="13"/>
+          <size
+              dx="16"
+              dy="16"/>
+        </layoutData>
+        <foregroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="blue"/>
+        <template/>
+        <template
+            x="15"
+            y="15"/>
+      </children>
+      <children
+          xsi:type="gmfgraph:Polyline"
+          lineWidth="2">
+        <layoutData
+            xsi:type="gmfgraph:XYLayoutData">
+          <topLeft
+              x="13"
+              y="13"/>
+          <size
+              dx="16"
+              dy="16"/>
+        </layoutData>
+        <foregroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="blue"/>
+        <template
+            y="15"/>
+        <template
+            x="15"/>
+      </children>
       <template
           x="20"/>
       <template
@@ -18,45 +70,70 @@
       <template
           y="20"/>
     </figures>
-    <descriptors
-        name="SequenceFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="Sequence">
-        <layout
-            xsi:type="gmfgraph:GridLayout"/>
-      </actualFigure>
-    </descriptors>
-    <descriptors
-        name="MessageStartFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Ellipse"
-          name="MessageStart">
-        <backgroundColor
-            xsi:type="gmfgraph:ConstantColor"
-            value="green"/>
-        <preferredSize
-            dx="100"
-            dy="100"/>
-      </actualFigure>
-    </descriptors>
-    <descriptors
-        name="MessageEndFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Ellipse"
-          name="MessageEnd">
+    <figures
+        xsi:type="gmfgraph:Rectangle"
+        name="Message">
+      <layout
+          xsi:type="gmfgraph:XYLayout"/>
+      <foregroundColor
+          xsi:type="gmfgraph:ConstantColor"
+          value="black"/>
+      <backgroundColor
+          xsi:type="gmfgraph:ConstantColor"/>
+      <preferredSize
+          dx="25"
+          dy="15"/>
+      <children
+          xsi:type="gmfgraph:Polyline">
+        <layoutData
+            xsi:type="gmfgraph:XYLayoutData">
+          <topLeft/>
+          <size
+              dx="25"
+              dy="8"/>
+        </layoutData>
         <foregroundColor
             xsi:type="gmfgraph:ConstantColor"
-            value="red"/>
-        <maximumSize
-            dx="100"
-            dy="100"/>
-      </actualFigure>
-    </descriptors>
+            value="black"/>
+        <preferredSize
+            dx="25"
+            dy="8"/>
+        <template/>
+        <template
+            x="12"
+            y="7"/>
+        <template
+            x="25"/>
+      </children>
+    </figures>
+    <figures
+        xsi:type="gmfgraph:ScalablePolygon"
+        name="ArrowLeftToRight">
+      <template
+          y="2"/>
+      <template
+          x="4"
+          y="2"/>
+      <template
+          x="4"/>
+      <template
+          x="6"
+          y="3"/>
+      <template
+          x="4"
+          y="6"/>
+      <template
+          x="4"
+          y="4"/>
+      <template
+          y="4"/>
+    </figures>
     <descriptors
         name="IfFigure">
       <actualFigure
-          xsi:type="gmfgraph:Rectangle">
+          xsi:type="gmfgraph:Rectangle"
+          outline="false"
+          lineWidth="0">
         <layout
             xsi:type="gmfgraph:GridLayout"
             numColumns="3"/>
@@ -65,55 +142,224 @@
             figure="//@figures.0/@figures.0">
           <layoutData
               xsi:type="gmfgraph:GridLayoutData"
+              verticalAlignment="BEGINNING"
               horizontalSpan="3"/>
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="IfContainer"/>
+            name="IfContainer"
+            lineKind="LINE_DOT">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              verticalAlignment="END"
+              horizontalAlignment="FILL"/>
+          <foregroundColor
+              xsi:type="gmfgraph:ConstantColor"
+              value="lightGray"/>
+          <preferredSize
+              dx="50"
+              dy="100"/>
+        </children>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="ElseIfContainer"/>
+            name="ElseIfContainer"
+            lineKind="LINE_DOT">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              verticalAlignment="END"
+              horizontalAlignment="FILL"/>
+          <layout
+              xsi:type="gmfgraph:FlowLayout"
+              vertical="true"/>
+          <foregroundColor
+              xsi:type="gmfgraph:ConstantColor"
+              value="lightGray"/>
+          <preferredSize
+              dx="50"
+              dy="100"/>
+        </children>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="ElseContainer"/>
+            name="ElseContainer"
+            lineKind="LINE_DOT">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              verticalAlignment="END"
+              horizontalAlignment="FILL"/>
+          <foregroundColor
+              xsi:type="gmfgraph:ConstantColor"
+              value="lightGray"/>
+          <preferredSize
+              dx="50"
+              dy="100"/>
+        </children>
         <children
             xsi:type="gmfgraph:FigureRef"
             figure="//@figures.0/@figures.0">
           <layoutData
               xsi:type="gmfgraph:GridLayoutData"
+              verticalAlignment="END"
               horizontalSpan="3"/>
         </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.2"/>
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.2"/>
       <accessors
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
       <accessors
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.3"/>
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.3"/>
+    </descriptors>
+    <descriptors
+        name="ReceiveFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Ellipse"
+          lineWidth="3">
+        <layout
+            xsi:type="gmfgraph:XYLayout"/>
+        <foregroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="blue"/>
+        <backgroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="lightBlue"/>
+        <preferredSize
+            dx="50"
+            dy="50"/>
+        <children
+            xsi:type="gmfgraph:FigureRef"
+            figure="//@figures.0/@figures.1">
+          <layoutData
+              xsi:type="gmfgraph:XYLayoutData">
+            <topLeft
+                x="18"
+                y="17"/>
+            <size
+                dx="25"
+                dy="15"/>
+          </layoutData>
+        </children>
+        <children
+            xsi:type="gmfgraph:FigureRef"
+            figure="//@figures.0/@figures.2">
+          <layoutData
+              xsi:type="gmfgraph:XYLayoutData">
+            <topLeft
+                x="4"
+                y="18"/>
+            <size
+                dx="20"
+                dy="13"/>
+          </layoutData>
+          <foregroundColor
+              xsi:type="gmfgraph:ConstantColor"
+              value="green"/>
+          <backgroundColor
+              xsi:type="gmfgraph:ConstantColor"
+              value="green"/>
+        </children>
+      </actualFigure>
+    </descriptors>
+    <descriptors
+        name="InvokeFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Ellipse"
+          lineWidth="3">
+        <layout
+            xsi:type="gmfgraph:XYLayout"/>
+        <foregroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="blue"/>
+        <backgroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="lightBlue"/>
+        <preferredSize
+            dx="50"
+            dy="50"/>
+        <children
+            xsi:type="gmfgraph:FigureRef"
+            figure="//@figures.0/@figures.1">
+          <layoutData
+              xsi:type="gmfgraph:XYLayoutData">
+            <topLeft
+                x="6"
+                y="17"/>
+            <size
+                dx="25"
+                dy="15"/>
+          </layoutData>
+        </children>
+        <children
+            xsi:type="gmfgraph:FigureRef"
+            figure="//@figures.0/@figures.2">
+          <layoutData
+              xsi:type="gmfgraph:XYLayoutData">
+            <topLeft
+                x="26"
+                y="18"/>
+            <size
+                dx="20"
+                dy="13"/>
+          </layoutData>
+          <foregroundColor
+              xsi:type="gmfgraph:ConstantColor"
+              value="red"/>
+          <backgroundColor
+              xsi:type="gmfgraph:ConstantColor"
+              value="red"/>
+        </children>
+      </actualFigure>
+    </descriptors>
+    <descriptors
+        name="PartnerLinkFigure">
+      <actualFigure
+          xsi:type="gmfgraph:SVGFigure"
+          name=""
+          documentURI="platform:/plugin/org.eclipse.bpel.businessEditor/pics/handshake.svg">
+        <preferredSize
+            dx="100"
+            dy="100"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors
+        name="PartnerLinkAssociation">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name=""
+          lineKind="LINE_DASH"/>
+    </descriptors>
+    <descriptors
+        name="SequenceContainer">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="">
+        <backgroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="yellow"/>
+      </actualFigure>
     </descriptors>
   </figures>
   <nodes
-      name="SequenceNode"
-      figure="SequenceFigure"/>
-  <nodes
-      name="StartNode"
-      figure="MessageStartFigure"/>
-  <nodes
-      name="EndNode"
-      figure="MessageEndFigure"/>
-  <nodes
       name="IfNode"
       figure="IfFigure"/>
+  <nodes
+      name="PartnerLinkNode"
+      figure="PartnerLinkFigure"/>
+  <nodes
+      name="InvokeNode"
+      figure="InvokeFigure"/>
+  <nodes
+      name="ReceiveNode"
+      figure="ReceiveFigure"/>
   <compartments
       name="IfThenCompartment"
       figure="IfFigure"
-      accessor="//@figures.0/@descriptors.3/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
   <compartments
       name="IfElseIfCompartment"
       figure="IfFigure"
-      accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
   <compartments
       name="IfElseCompartment"
       figure="IfFigure"
-      accessor="//@figures.0/@descriptors.3/@accessors.2"/>
+      accessor="//@figures.0/@descriptors.0/@accessors.2"/>
 </gmfgraph:Canvas>

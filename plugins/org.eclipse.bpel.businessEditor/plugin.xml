@@ -217,7 +217,7 @@
       <viewProvider class="org.eclipse.bpel.businessEditor.diagram.providers.BpelViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Bpel"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,3001,3002,3003,3004"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2002,2003"/>
       </viewProvider>
    </extension>
 
@@ -229,7 +229,7 @@
             <method name="getType()" value="Bpel"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2001,3001,3002,3003,3004"/>
+            <method name="getType()" value="2002,2003"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value=""/>
@@ -238,7 +238,7 @@
             <method name="getType()" value=""/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
-            <method name="getType()" value="7001,7002"/>
+            <method name="getType()" value=""/>
          </object>
          <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
@@ -248,9 +248,10 @@
       <?gmfgen generated="true"?>
       <modelingAssistantProvider class="org.eclipse.bpel.businessEditor.diagram.providers.BpelModelingAssistantProvider">
          <Priority name="Lowest"/>
-         <object class="org.eclipse.bpel.businessEditor.diagram.edit.parts.ProcessEditPart" id="Process_1000"/>
-         <object class="org.eclipse.bpel.businessEditor.diagram.edit.parts.SequenceEditPart" id="Sequence_2001"/>
-         <context elements="Process_1000,Sequence_2001"/>
+         <object class="org.eclipse.bpel.businessEditor.diagram.edit.parts.ProcessEditPart" id="Sequence_1000"/>
+         <object class="org.eclipse.bpel.businessEditor.diagram.edit.parts.InvokeEditPart" id="Invoke_2002"/>
+         <object class="org.eclipse.bpel.businessEditor.diagram.edit.parts.ReceiveEditPart" id="Receive_2003"/>
+         <context elements="Sequence_1000,Invoke_2002,Receive_2003,"/>
       </modelingAssistantProvider>
    </extension>
 
@@ -265,61 +266,33 @@
       <?gmfgen generated="true"?>
       <metamodel nsURI="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
          <metamodelType
-               id="org.eclipse.bpel.diagram.Process_1000"
-               name="%metatype.name.Process_1000"
+               id="org.eclipse.bpel.diagram.Sequence_1000"
+               name="%metatype.name.Sequence_1000"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Process"
+               eclass="Sequence"
                edithelper="org.eclipse.bpel.businessEditor.diagram.edit.helpers.ProcessEditHelper">
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
          <metamodelType
-               id="org.eclipse.bpel.diagram.Sequence_2001"
-               name="%metatype.name.Sequence_2001"
+               id="org.eclipse.bpel.diagram.Invoke_2002"
+               name="%metatype.name.Invoke_2002"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Sequence"
-               edithelper="org.eclipse.bpel.businessEditor.diagram.edit.helpers.SequenceEditHelper">
-            <param name="semanticHint" value="2001"/>
+               eclass="Invoke"
+               edithelper="org.eclipse.bpel.businessEditor.diagram.edit.helpers.InvokeEditHelper">
+            <param name="semanticHint" value="2002"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
          <metamodelType
-               id="org.eclipse.bpel.diagram.Receive_3001"
-               name="%metatype.name.Receive_3001"
+               id="org.eclipse.bpel.diagram.Receive_2003"
+               name="%metatype.name.Receive_2003"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Receive"
                edithelper="org.eclipse.bpel.businessEditor.diagram.edit.helpers.ReceiveEditHelper">
-            <param name="semanticHint" value="3001"/>
+            <param name="semanticHint" value="2003"/>
          </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
-         <metamodelType
-               id="org.eclipse.bpel.diagram.If_3002"
-               name="%metatype.name.If_3002"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="If"
-               edithelper="org.eclipse.bpel.businessEditor.diagram.edit.helpers.IfEditHelper">
-            <param name="semanticHint" value="3002"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
-         <specializationType
-               id="org.eclipse.bpel.diagram.Sequence_3003"
-               name="%metatype.name.Sequence_3003"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.bpel.diagram.Sequence_2001"/>
-            <param name="semanticHint" value="3003"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
-         <specializationType
-               id="org.eclipse.bpel.diagram.Sequence_3004"
-               name="%metatype.name.Sequence_3004"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.bpel.diagram.Sequence_2001"/>
-            <param name="semanticHint" value="3004"/>
-         </specializationType>
       </metamodel>
    </extension>
 
@@ -333,12 +306,9 @@
          </enablement>
       </clientContext> 
       <binding context="org.eclipse.bpel.diagram.TypeContext">
-         <elementType ref="org.eclipse.bpel.diagram.Process_1000"/>
-         <elementType ref="org.eclipse.bpel.diagram.Sequence_2001"/>
-         <elementType ref="org.eclipse.bpel.diagram.Receive_3001"/>
-         <elementType ref="org.eclipse.bpel.diagram.If_3002"/>
-         <elementType ref="org.eclipse.bpel.diagram.Sequence_3003"/>
-         <elementType ref="org.eclipse.bpel.diagram.Sequence_3004"/>
+         <elementType ref="org.eclipse.bpel.diagram.Sequence_1000"/>
+         <elementType ref="org.eclipse.bpel.diagram.Invoke_2002"/>
+         <elementType ref="org.eclipse.bpel.diagram.Receive_2003"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>

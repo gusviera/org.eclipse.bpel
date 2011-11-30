@@ -433,6 +433,11 @@
 				<enabled>true</enabled>
 			</releases>
 		</repository>
+		<repository>
+			<id>nebula-incubator-snapshots]</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/technology/nebula/incubation/snapshots/</url>
+		</repository>
 	</repositories>
 
 	<pluginRepositories>

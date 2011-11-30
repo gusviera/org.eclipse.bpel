@@ -20,16 +20,51 @@
         xsi:type="gmfgen:FigureViewmap"
         figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
     <domainDiagramElement
-        href="../../org.eclipse.bpel.model/src/model/bpel.genmodel#//model/Process"/>
-    <childNodes
-        visualID="3001"
+        href="../../org.eclipse.bpel.model/src/model/bpel.genmodel#//model/Sequence"/>
+    <topLevelNodes
+        visualID="2002"
+        editPartClassName="InvokeEditPart"
+        itemSemanticEditPolicyClassName="InvokeItemSemanticEditPolicy"
+        notationViewFactoryClassName="InvokeViewFactory"
+        canonicalEditPolicyClassName="InvokeCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="InvokeGraphicalNodeEditPolicy"
+        createCommandClassName="InvokeCreateCommand">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="InvokeEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          layoutType="XY_LAYOUT"
+          className="InvokeFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class InvokeFigure extends org.eclipse.draw2d.Ellipse {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public InvokeFigure() {&#xA;&#x9;&#x9;this.setLayoutManager(new org.eclipse.draw2d.XYLayout());&#xA;&#x9;&#x9;this.setLineWidth(3);&#xA;&#x9;this.setForegroundColor(org.eclipse.draw2d.ColorConstants.blue);&#xA;&#x9;this.setBackgroundColor(org.eclipse.draw2d.ColorConstants.lightBlue);&#xA;this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(50)&#xA;, getMapMode().DPtoLP(50)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;/*FIXME referenced figures are just not yet fully-functional; need process attrs and layout here*/&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure message0 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#x9;message0.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;&#x9;message0.setBackgroundColor(org.eclipse.draw2d.ColorConstants.white);&#xA;message0.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(25)&#xA;, getMapMode().DPtoLP(15)&#xA;));&#xA;&#xA;this.add(message0);&#xA;message0.setLayoutManager(new org.eclipse.draw2d.XYLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.PolylineShape polyline1 = new org.eclipse.draw2d.PolylineShape();&#xA;polyline1.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;polyline1.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(7)&#xA;));&#xA;polyline1.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(25)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;&#x9;polyline1.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;polyline1.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(25)&#xA;, getMapMode().DPtoLP(8)&#xA;));&#xA;&#xA;message0.add(polyline1, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(25)&#xA;, getMapMode().DPtoLP(8)&#xA;)&#xA;);&#xA;&#xA;&#xA;/*FIXME referenced figures are just not yet fully-functional; need process attrs and layout here*/&#xA;&#xA;&#xA;org.eclipse.draw2d.ScalablePolygonShape arrowLeftToRight0 = new org.eclipse.draw2d.ScalablePolygonShape();&#xA;arrowLeftToRight0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(2)&#xA;));&#xA;arrowLeftToRight0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(4)&#xA;, getMapMode().DPtoLP(2)&#xA;));&#xA;arrowLeftToRight0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(4)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;arrowLeftToRight0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(6)&#xA;, getMapMode().DPtoLP(3)&#xA;));&#xA;arrowLeftToRight0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(4)&#xA;, getMapMode().DPtoLP(6)&#xA;));&#xA;arrowLeftToRight0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(4)&#xA;, getMapMode().DPtoLP(4)&#xA;));&#xA;arrowLeftToRight0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(4)&#xA;));&#xA;arrowLeftToRight0.setFill(true);&#xA;&#xA;this.add(arrowLeftToRight0);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+        <attributes
+            xsi:type="gmfgen:StyleAttributes"
+            fixedForeground="true"
+            fixedBackground="true"/>
+        <attributes
+            xsi:type="gmfgen:DefaultSizeAttributes"
+            width="50"
+            height="50"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass
+            href="../../org.eclipse.bpel.model/src/model/bpel.genmodel#//model/Invoke"/>
+        <containmentMetaFeature
+            href="../../org.eclipse.bpel.model/src/model/bpel.genmodel#//model/Sequence/activities"/>
+        <childMetaFeature
+            href="../../org.eclipse.bpel.model/src/model/bpel.genmodel#//model/Sequence/activities"/>
+      </modelFacet>
+    </topLevelNodes>
+    <topLevelNodes
+        visualID="2003"
         editPartClassName="ReceiveEditPart"
         itemSemanticEditPolicyClassName="ReceiveItemSemanticEditPolicy"
         notationViewFactoryClassName="ReceiveViewFactory"
         canonicalEditPolicyClassName="ReceiveCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="ReceiveGraphicalNodeEditPolicy"
-        createCommandClassName="ReceiveCreateCommand"
-        containers="//@diagram/@topLevelNodes.0 //@diagram/@childNodes.3">
+        createCommandClassName="ReceiveCreateCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -37,15 +72,17 @@
           editHelperClassName="ReceiveEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
-          className="MessageStartFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class MessageStartFigure extends org.eclipse.draw2d.Ellipse {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public MessageStartFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.setBackgroundColor(org.eclipse.draw2d.ColorConstants.green);&#xA;this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(100)&#xA;, getMapMode().DPtoLP(100)&#xA;));&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          layoutType="XY_LAYOUT"
+          className="ReceiveFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ReceiveFigure extends org.eclipse.draw2d.Ellipse {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ReceiveFigure() {&#xA;&#x9;&#x9;this.setLayoutManager(new org.eclipse.draw2d.XYLayout());&#xA;&#x9;&#x9;this.setLineWidth(3);&#xA;&#x9;this.setForegroundColor(org.eclipse.draw2d.ColorConstants.blue);&#xA;&#x9;this.setBackgroundColor(org.eclipse.draw2d.ColorConstants.lightBlue);&#xA;this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(50)&#xA;, getMapMode().DPtoLP(50)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;/*FIXME referenced figures are just not yet fully-functional; need process attrs and layout here*/&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure message0 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#x9;message0.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;&#x9;message0.setBackgroundColor(org.eclipse.draw2d.ColorConstants.white);&#xA;message0.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(25)&#xA;, getMapMode().DPtoLP(15)&#xA;));&#xA;&#xA;this.add(message0);&#xA;message0.setLayoutManager(new org.eclipse.draw2d.XYLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.PolylineShape polyline1 = new org.eclipse.draw2d.PolylineShape();&#xA;polyline1.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;polyline1.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(7)&#xA;));&#xA;polyline1.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(25)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;&#x9;polyline1.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;polyline1.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(25)&#xA;, getMapMode().DPtoLP(8)&#xA;));&#xA;&#xA;message0.add(polyline1, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(25)&#xA;, getMapMode().DPtoLP(8)&#xA;)&#xA;);&#xA;&#xA;&#xA;/*FIXME referenced figures are just not yet fully-functional; need process attrs and layout here*/&#xA;&#xA;&#xA;org.eclipse.draw2d.ScalablePolygonShape arrowLeftToRight0 = new org.eclipse.draw2d.ScalablePolygonShape();&#xA;arrowLeftToRight0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(2)&#xA;));&#xA;arrowLeftToRight0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(4)&#xA;, getMapMode().DPtoLP(2)&#xA;));&#xA;arrowLeftToRight0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(4)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;arrowLeftToRight0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(6)&#xA;, getMapMode().DPtoLP(3)&#xA;));&#xA;arrowLeftToRight0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(4)&#xA;, getMapMode().DPtoLP(6)&#xA;));&#xA;arrowLeftToRight0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(4)&#xA;, getMapMode().DPtoLP(4)&#xA;));&#xA;arrowLeftToRight0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(4)&#xA;));&#xA;arrowLeftToRight0.setFill(true);&#xA;&#xA;this.add(arrowLeftToRight0);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
         <attributes
             xsi:type="gmfgen:StyleAttributes"
+            fixedForeground="true"
             fixedBackground="true"/>
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
-            width="100"
-            height="100"/>
+            width="50"
+            height="50"/>
       </viewmap>
       <modelFacet>
         <metaClass
@@ -55,173 +92,20 @@
         <childMetaFeature
             href="../../org.eclipse.bpel.model/src/model/bpel.genmodel#//model/Sequence/activities"/>
       </modelFacet>
-    </childNodes>
-    <childNodes
-        visualID="3002"
-        editPartClassName="IfEditPart"
-        itemSemanticEditPolicyClassName="IfItemSemanticEditPolicy"
-        notationViewFactoryClassName="IfViewFactory"
-        canonicalEditPolicyClassName="IfCanonicalEditPolicy"
-        compartments="//@diagram/@compartments.0 //@diagram/@compartments.1"
-        graphicalNodeEditPolicyClassName="IfGraphicalNodeEditPolicy"
-        createCommandClassName="IfCreateCommand"
-        containers="//@diagram/@childNodes.3 //@diagram/@topLevelNodes.0">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType
-          xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="IfEditHelper"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="IfFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class IfFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureElseIfContainer; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureIfContainer; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureElseContainer; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public IfFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 2;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;/*FIXME referenced figures are just not yet fully-functional; need process attrs and layout here*/&#xA;&#xA;&#xA;org.eclipse.draw2d.PolygonShape diamond0 = new org.eclipse.draw2d.PolygonShape();&#xA;diamond0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(20)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;diamond0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(40)&#xA;, getMapMode().DPtoLP(20)&#xA;));&#xA;diamond0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(20)&#xA;, getMapMode().DPtoLP(40)&#xA;));&#xA;diamond0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(20)&#xA;));&#xA;diamond0.setFill(true);&#xA;&#xA;this.add(diamond0);&#xA;&#xA;&#xA;&#xA;fFigureIfContainer = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;this.add(fFigureIfContainer);&#xA;&#xA;&#xA;&#xA;fFigureElseIfContainer = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;this.add(fFigureElseIfContainer);&#xA;&#xA;&#xA;&#xA;fFigureElseContainer = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;this.add(fFigureElseContainer);&#xA;&#xA;/*FIXME referenced figures are just not yet fully-functional; need process attrs and layout here*/&#xA;&#xA;&#xA;org.eclipse.draw2d.PolygonShape diamond0 = new org.eclipse.draw2d.PolygonShape();&#xA;diamond0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(20)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;diamond0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(40)&#xA;, getMapMode().DPtoLP(20)&#xA;));&#xA;diamond0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(20)&#xA;, getMapMode().DPtoLP(40)&#xA;));&#xA;diamond0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(20)&#xA;));&#xA;diamond0.setFill(true);&#xA;&#xA;this.add(diamond0);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureElseIfContainer() {&#xA;&#x9;&#x9;return fFigureElseIfContainer;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureIfContainer() {&#xA;&#x9;&#x9;return fFigureIfContainer;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureElseContainer() {&#xA;&#x9;&#x9;return fFigureElseContainer;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet>
-        <metaClass
-            href="../../org.eclipse.bpel.model/src/model/bpel.genmodel#//model/If"/>
-        <containmentMetaFeature
-            href="../../org.eclipse.bpel.model/src/model/bpel.genmodel#//model/Sequence/activities"/>
-        <childMetaFeature
-            href="../../org.eclipse.bpel.model/src/model/bpel.genmodel#//model/Sequence/activities"/>
-      </modelFacet>
-    </childNodes>
-    <childNodes
-        visualID="3003"
-        editPartClassName="Sequence2EditPart"
-        itemSemanticEditPolicyClassName="Sequence2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="SequenceViewFactory"
-        canonicalEditPolicyClassName="Sequence2CanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.3"
-        graphicalNodeEditPolicyClassName="Sequence2GraphicalNodeEditPolicy"
-        createCommandClassName="Sequence2CreateCommand"
-        containers="//@diagram/@compartments.0">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType
-          xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@topLevelNodes.0/@elementType"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="SequenceFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class SequenceFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public SequenceFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet>
-        <metaClass
-            href="../../org.eclipse.bpel.model/src/model/bpel.genmodel#//model/Sequence"/>
-        <containmentMetaFeature
-            href="../../org.eclipse.bpel.model/src/model/bpel.genmodel#//model/If/activity"/>
-        <childMetaFeature
-            href="../../org.eclipse.bpel.model/src/model/bpel.genmodel#//model/If/activity"/>
-      </modelFacet>
-    </childNodes>
-    <childNodes
-        visualID="3004"
-        editPartClassName="Sequence3EditPart"
-        itemSemanticEditPolicyClassName="Sequence3ItemSemanticEditPolicy"
-        notationViewFactoryClassName="SequenceViewFactory"
-        canonicalEditPolicyClassName="Sequence3CanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1"
-        graphicalNodeEditPolicyClassName="Sequence3GraphicalNodeEditPolicy"
-        createCommandClassName="Sequence3CreateCommand"
-        containers="//@diagram/@childNodes.2">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType
-          xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@topLevelNodes.0/@elementType"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="SequenceFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class SequenceFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public SequenceFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet>
-        <metaClass
-            href="../../org.eclipse.bpel.model/src/model/bpel.genmodel#//model/Sequence"/>
-        <containmentMetaFeature
-            href="../../org.eclipse.bpel.model/src/model/bpel.genmodel#//model/Sequence/activities"/>
-        <childMetaFeature
-            href="../../org.eclipse.bpel.model/src/model/bpel.genmodel#//model/Sequence/activities"/>
-      </modelFacet>
-    </childNodes>
-    <topLevelNodes
-        visualID="2001"
-        editPartClassName="SequenceEditPart"
-        itemSemanticEditPolicyClassName="SequenceItemSemanticEditPolicy"
-        notationViewFactoryClassName="SequenceViewFactory"
-        canonicalEditPolicyClassName="SequenceCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1"
-        graphicalNodeEditPolicyClassName="SequenceGraphicalNodeEditPolicy"
-        createCommandClassName="SequenceCreateCommand">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType
-          xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="SequenceEditHelper"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="SequenceFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class SequenceFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public SequenceFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet>
-        <metaClass
-            href="../../org.eclipse.bpel.model/src/model/bpel.genmodel#//model/Sequence"/>
-        <containmentMetaFeature
-            href="../../org.eclipse.bpel.model/src/model/bpel.genmodel#//model/Process/activity"/>
-        <childMetaFeature
-            href="../../org.eclipse.bpel.model/src/model/bpel.genmodel#//model/Process/activity"/>
-      </modelFacet>
     </topLevelNodes>
-    <compartments
-        visualID="7001"
-        editPartClassName="IfIfThenCompartmentEditPart"
-        itemSemanticEditPolicyClassName="IfIfThenCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="IfIfThenCompartmentViewFactory"
-        canonicalEditPolicyClassName="IfIfThenCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.2"
-        title="IfThenCompartment"
-        canCollapse="false"
-        needsTitle="false"
-        node="//@diagram/@childNodes.1"
-        listLayout="false">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <viewmap
-          xsi:type="gmfgen:ParentAssignedViewmap"
-          getterName="getFigureIfContainer"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
-    </compartments>
-    <compartments
-        visualID="7002"
-        editPartClassName="IfIfElseCompartmentEditPart"
-        itemSemanticEditPolicyClassName="IfIfElseCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="IfIfElseCompartmentViewFactory"
-        canonicalEditPolicyClassName="IfIfElseCompartmentCanonicalEditPolicy"
-        title="IfElseCompartment"
-        canCollapse="false"
-        needsTitle="false"
-        node="//@diagram/@childNodes.1">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <viewmap
-          xsi:type="gmfgen:ParentAssignedViewmap"
-          getterName="getFigureElseContainer"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
-    </compartments>
     <palette>
       <groups
           title="Default"
           description="Holds top-level non-container tools">
         <entries
             xsi:type="gmfgen:ToolEntry"
-            title="start"
-            genNodes="//@diagram/@childNodes.0"/>
+            title="Invoke"
+            description=""
+            genNodes="//@diagram/@topLevelNodes.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
-            title="end"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="sequence"
-            genNodes="//@diagram/@topLevelNodes.0 //@diagram/@childNodes.2 //@diagram/@childNodes.3"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="if"
-            genNodes="//@diagram/@childNodes.1"/>
+            title="Receive"
+            genNodes="//@diagram/@topLevelNodes.1"/>
       </groups>
     </palette>
     <preferencePages
@@ -252,32 +136,18 @@
   </diagram>
   <plugin>
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
+    <requiredPlugins>org.eclipse.gmf.runtime.lite.svg</requiredPlugins>
   </plugin>
   <editor/>
   <navigator>
     <childReferences
         child="//@diagram"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.0"
-        child="//@diagram/@childNodes.0"/>
-    <childReferences
-        parent="//@diagram/@childNodes.3"
-        child="//@diagram/@childNodes.0"/>
-    <childReferences
-        parent="//@diagram/@childNodes.3"
-        child="//@diagram/@childNodes.1"/>
-    <childReferences
-        parent="//@diagram/@childNodes.2"
-        child="//@diagram/@childNodes.3"/>
-    <childReferences
-        parent="//@diagram/@childNodes.1"
-        child="//@diagram/@childNodes.2"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.0"
-        child="//@diagram/@childNodes.1"/>
-    <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.0"/>
+    <childReferences
+        parent="//@diagram"
+        child="//@diagram/@topLevelNodes.1"/>
   </navigator>
   <diagramUpdater/>
   <propertySheet>

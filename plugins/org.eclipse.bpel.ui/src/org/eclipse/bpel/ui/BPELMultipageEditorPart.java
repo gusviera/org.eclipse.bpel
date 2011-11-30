@@ -26,8 +26,8 @@ import org.eclipse.bpel.common.extension.model.ExtensionMap;
 import org.eclipse.bpel.common.ui.editmodel.IEditModelListener;
 import org.eclipse.bpel.common.ui.editmodel.ResourceInfo;
 import org.eclipse.bpel.model.Activity;
-import org.eclipse.bpel.model.CorrelationSet;
 import org.eclipse.bpel.model.BPELExtensibleElement;
+import org.eclipse.bpel.model.CorrelationSet;
 import org.eclipse.bpel.model.Import;
 import org.eclipse.bpel.model.MessageExchange;
 import org.eclipse.bpel.model.PartnerLink;
@@ -68,7 +68,6 @@ import org.eclipse.draw2d.parts.ScrollableThumbnail;
 import org.eclipse.draw2d.parts.Thumbnail;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.NotificationImpl;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -88,7 +87,6 @@ import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.jface.dialogs.ErrorDialog;
-import org.eclipse.jface.dialogs.IMessageProvider;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.viewers.IPostSelectionProvider;
@@ -132,15 +130,12 @@ import org.eclipse.wst.sse.core.StructuredModelManager;
 import org.eclipse.wst.sse.core.internal.provisional.IStructuredModel;
 import org.eclipse.wst.sse.core.internal.provisional.text.IStructuredDocument;
 import org.eclipse.wst.sse.ui.StructuredTextEditor;
-import org.eclipse.wst.xml.core.internal.provisional.contenttype.ContentTypeIdForXML;
 import org.eclipse.wst.xml.core.internal.provisional.document.IDOMModel;
 import org.eclipse.wst.xml.core.internal.provisional.document.IDOMNode;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-public class BPELMultipageEditorPart extends MultiPageEditorPart
-implements IEditModelListener,
-IGotoMarker/*, CommandStackListener*/ {
+public class BPELMultipageEditorPart extends MultiPageEditorPart implements IEditModelListener, IGotoMarker/*, CommandStackListener*/ {
 
 	class OutlinePage extends ContentOutlinePage {
 		private PageBook pageBook;
@@ -357,6 +352,7 @@ IGotoMarker/*, CommandStackListener*/ {
 	protected IResourceChangeListener preBuildRefactoringListener;
 	BPELModelReconcileAdapter bpelModelReconcileAdapter;
 
+	private Map<BPELExtensibleElement, IEditorPart> additionalElementPages = new HashMap<BPELExtensibleElement, IEditorPart>();
 	private OutlinePage outlinePage;
 	protected BPELTabbedPropertySheetPage currentPropertySheetPage;
 
@@ -1502,6 +1498,36 @@ IGotoMarker/*, CommandStackListener*/ {
 				BPELUIPlugin.log(e);
 			}
 		}
+	}
 	
+	/**
+	 * @param assign
+	 * @return
+	 */
+	public boolean containsPageFor(BPELExtensibleElement modelElement) {
+		return additionalElementPages.containsKey(modelElement);
+	}
+
+	/**
+	 * Registers the page in the editor, and performs a {@link BPELMultipageEditorPart#addPage(IEditorPart, IEditorInput)
+	 * @param element the element in the model 
+	 * @param editor the dedicated editor for the given element
+	 * @return the index of the page (same as {@link BPELMultipageEditorPart#addPage(IEditorPart, IEditorInput));
+	 */
+	public int registerPage(BPELExtensibleElement element, IEditorPart editor) throws PartInitException {
+		additionalElementPages.put(element, editor);
+		int index = addPage(editor, getEditorInput());
+		setPageText(index, editor.getTitle());
+		return index;
+	}
+
+	/**
+	 * @param assign
+	 */
+	public void showPageFor(BPELExtensibleElement element) {
+		IEditorPart editor = additionalElementPages.get(element);
+		if (editor != null) {
+			setActiveEditor(editor);
+		}
 	}
 }

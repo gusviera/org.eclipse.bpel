@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Pics for BPEL
+Bundle-SymbolicName: org.eclipse.bpel.pics
+Bundle-Version: 0.8.0.qualifier
+Bundle-Vendor: EBM WebSourcing (PetalsLink)
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Bundle-Activator: org.eclipse.bpel.pics.internal.PicsPlugin
+Export-Package: org.eclipse.bpel.pics
+Bundle-ActivationPolicy: lazy

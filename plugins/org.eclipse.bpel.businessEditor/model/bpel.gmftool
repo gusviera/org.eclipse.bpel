@@ -6,15 +6,10 @@
   <palette>
     <tools
         xsi:type="gmftool:CreationTool"
-        title="start"/>
+        title="Invoke"
+        description=""/>
     <tools
         xsi:type="gmftool:CreationTool"
-        title="end"/>
-    <tools
-        xsi:type="gmftool:CreationTool"
-        title="sequence"/>
-    <tools
-        xsi:type="gmftool:CreationTool"
-        title="if"/>
+        title="Receive"/>
   </palette>
 </gmftool:ToolRegistry>

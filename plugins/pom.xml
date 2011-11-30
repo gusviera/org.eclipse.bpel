@@ -13,6 +13,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<modules>
+		<module>org.eclipse.bpel.pics</module>
 		<module>org.eclipse.bpel.apache.ode.deploy.model</module>
 		<module>org.eclipse.bpel.apache.ode.deploy.ui</module>
 		<module>org.eclipse.bpel.apache.ode.runtime</module>
@@ -26,6 +27,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		<module>org.eclipse.bpel.validator</module>
 		<module>org.eclipse.bpel.wsil.model</module>
 		<module>org.eclipse.bpel.xpath10</module>
+		<module>org.eclipse.bpel.editor.assign</module>
 	</modules>
 </project>
 	

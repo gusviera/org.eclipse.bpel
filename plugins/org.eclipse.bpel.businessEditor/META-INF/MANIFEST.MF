@@ -29,7 +29,8 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.bpel.model.edit;visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
  org.eclipse.gef;visibility:=reexport,
- javax.wsdl;bundle-version="1.5.1"
+ javax.wsdl;bundle-version="1.5.1",
+ org.eclipse.gmf.runtime.lite.svg;visibility:=reexport
 Bundle-ClassPath: .
 Bundle-Activator: org.eclipse.bpel.businessEditor.diagram.part.BpelDiagramEditorPlugin
 Bundle-Vendor: %providerName
