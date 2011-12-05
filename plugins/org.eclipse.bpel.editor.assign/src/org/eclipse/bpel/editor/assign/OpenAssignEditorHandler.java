@@ -8,11 +8,9 @@ import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.IHandler;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.swt.custom.CTabFolder;
-import org.eclipse.swt.custom.CTabItem;
-import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.IEditorReference;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PlatformUI;
@@ -31,7 +29,7 @@ public class OpenAssignEditorHandler extends AbstractHandler implements
 			try {
 				IEditorReference editorRef = null;
 				for (IEditorReference ref : workbenchPage.getEditorReferences()) {
-					if (ref.getEditor(false).equals(editor)) {
+					if (ref != null && ref.getEditor(false) != null && ref.getEditor(false).equals(editor)) {
 						editorRef = ref;
 					}
 				}
@@ -39,7 +37,7 @@ public class OpenAssignEditorHandler extends AbstractHandler implements
 				editor.registerPage(assign, new AssignFormPage(assign));
 				editor.showPageFor(assign);
 			} catch (Exception ex) {
-				return IStatus.ERROR;
+				return new Status(IStatus.ERROR, BPELAssignPlugin.PLUGIN_ID, ex.getMessage(), ex);
 			}
 		}
 		return IStatus.OK;

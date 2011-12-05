@@ -11,8 +11,8 @@
 package org.eclipse.bpel.editor.assign.contributors.expression;
 
 import org.eclipse.bpel.editor.assign.Messages;
-import org.eclipse.bpel.model.From;
-import org.eclipse.bpel.model.To;
+import org.eclipse.bpel.model.AbstractAssignBound;
+import org.eclipse.bpel.model.Expression;
 import org.eclipse.bpel.pics.Pics;
 import org.eclipse.bpel.ui.details.tree.ITreeNode;
 import org.eclipse.jface.viewers.LabelProvider;
@@ -32,10 +32,13 @@ public class ExpressionLabelProvider extends LabelProvider {
 			return Messages.createExpression;
 		} else if (item instanceof ITreeNode) {
 			ITreeNode node = (ITreeNode)item;
-			if (node.getModelObject() instanceof From) {
-				return ((From) node.getModelObject()).getExpression().getBody().toString();
-			} else if (node.getModelObject() instanceof To) {
-				return ((To) node.getModelObject()).getExpression().getBody().toString();
+			if (node.getModelObject() instanceof AbstractAssignBound) {
+				Expression exp = ((AbstractAssignBound) node.getModelObject()).getExpression();
+				if (exp.getBody() != null) {
+					return exp.getBody().toString();
+				} else {
+					return "[empty expression]";
+				}
 			}
 		}
 		return super.getText(item);
