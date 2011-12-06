@@ -15,15 +15,9 @@
       <menuContribution
             allPopups="false"
             locationURI="popup:org.eclipse.ui.popup.any?before=additions">
-           <command
-                  commandId="org.eclipse.bpel.editor.assign.openAssignEditor"
-                  style="push">
-              <visibleWhen
-                    checkEnabled="true">
-              </visibleWhen>
-            </command>
             <command
                   commandId="org.eclipse.bpel.editor.assign.openAssignEditorDialog"
+                  icon="icons/arrow_switch.png"
                   style="push">
                <visibleWhen
                      checkEnabled="true">
