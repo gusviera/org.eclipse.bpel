@@ -114,14 +114,14 @@ public class XPathExpressionEditor extends AbstractExpressionEditor {
 	 * Create controls ..
 	 */
 	@Override
-	public void createControls(Composite parent, FormToolkit tk) {
-		super.createControls(parent, tk);		
+	public void createControls(Composite parent, FormToolkit toolkit) {
+		super.createControls(parent, toolkit);
 		createEditor(parent);
 	}
 
 	protected void createEditor(Composite parent) {
 
-		this.mainComposite = tk.createComposite( parent );
+		this.mainComposite = wf.createComposite( parent );
 		FormLayout layout = new FormLayout();
 		layout.marginWidth = layout.marginHeight = 0;
 		mainComposite.setLayout(layout);
@@ -205,8 +205,8 @@ public class XPathExpressionEditor extends AbstractExpressionEditor {
 			return textEditorComposite;
 		}
 
-		// otherwise create it ...
-		textEditorComposite = tk.createComposite(editorComposite,SWT.BORDER);
+				
+		textEditorComposite = wf.createComposite(editorComposite,SWT.BORDER);
 		textEditorComposite.setLayout(new FillLayout());
 		textEditor = (XPathTextEditor) createEditor(
 				XPathTextEditor.XPATH_EDITOR_ID,
@@ -235,7 +235,7 @@ public class XPathExpressionEditor extends AbstractExpressionEditor {
 			return dateTimeEditorComposite;
 		}
 
-		dateTimeEditorComposite = tk.createComposite(editorComposite, SWT.NONE);
+		dateTimeEditorComposite = wf.createComposite(editorComposite, SWT.NONE);
 
 		FormLayout layout = new FormLayout();
 		layout.marginWidth = layout.marginHeight = 0;
@@ -276,6 +276,7 @@ public class XPathExpressionEditor extends AbstractExpressionEditor {
 					int[] values = dateTimeSelector.getValues();         		        
 					textEditorInput.setEditorContent ( BPELDateTimeHelpers.createXPathDateTime(values, false) , getModelObject() );
 				}
+				notifyChanged();
 			}
 
 			public void widgetDefaultSelected(SelectionEvent e) {
@@ -284,7 +285,7 @@ public class XPathExpressionEditor extends AbstractExpressionEditor {
 
 		PlatformUI.getWorkbench().getHelpSystem().setHelp(
 				dateTimeEditorComposite,
-				IHelpContextIds.PROPERTY_PAGE_WAIT_DATE);
+				IHelpContextIds.XPATH_DATE);
 
 		return dateTimeEditorComposite;
 	}
@@ -301,7 +302,7 @@ public class XPathExpressionEditor extends AbstractExpressionEditor {
 			return durationEditorComposite;
 		}
 		
-	    durationEditorComposite = tk.createComposite(editorComposite, SWT.NONE);
+	    durationEditorComposite = wf.createComposite(editorComposite, SWT.NONE);
 	    FormLayout layout = new FormLayout();
 	    layout.marginWidth = layout.marginHeight = 0;
 	    durationEditorComposite.setLayout(layout);
@@ -337,7 +338,7 @@ public class XPathExpressionEditor extends AbstractExpressionEditor {
 	    });
 	    
 	    PlatformUI.getWorkbench().getHelpSystem().setHelp(
-	    		durationEditorComposite, IHelpContextIds.PROPERTY_PAGE_WAIT_DURATION);
+	    		durationEditorComposite, IHelpContextIds.XPATH_DURATION);
 	    
 	    return durationEditorComposite;
 	}

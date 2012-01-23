@@ -86,10 +86,10 @@ public class DateTimeSelector extends Composite {
 	
 	private FormToolkit wf;
 
-	public DateTimeSelector(FormToolkit factory, Composite parent, int style, int yearMin, int yearMax) {
+	public DateTimeSelector(FormToolkit toolkit, Composite parent, int style, int yearMin, int yearMax) {
 		super(parent, style);
 		combo = new Combo[6];
-		this.wf = factory;
+		this.wf = toolkit;
 		this.yearMin = yearMin;
 		this.yearMax = yearMax;
 		if (MONTH_NAMES == null)  {

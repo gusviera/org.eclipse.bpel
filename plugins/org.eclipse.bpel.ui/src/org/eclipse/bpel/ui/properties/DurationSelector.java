@@ -64,9 +64,9 @@ public class DurationSelector extends Composite {
 	
 	private FormToolkit wf;
 
-	public DurationSelector(FormToolkit tk, Composite parent, int style) {
+	public DurationSelector(FormToolkit toolkit, Composite parent, int style) {
 		super(parent, style);
-		this.wf = tk;
+		this.wf = toolkit;
 		setLayout(new FillLayout());
 		createControls(this);
 	}

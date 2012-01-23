@@ -40,9 +40,11 @@ public abstract class AbstractExpressionEditor implements IExpressionEditor {
 
 	protected EditorInViewManager fManager;
 
-
 	/** The underlying model object */
 	private Object fModelObject;
+	
+	/** a {@link FormToolkit} to use */
+	protected FormToolkit wf;
 	
 	/** The expression type */
 	private String fExprType ;
@@ -53,8 +55,8 @@ public abstract class AbstractExpressionEditor implements IExpressionEditor {
 	 * @see org.eclipse.bpel.ui.expressions.IExpressionEditor#createControls(org.eclipse.swt.widgets.Composite,
 	 *      org.eclipse.bpel.ui.properties.BPELPropertySection)
 	 */
-	public void createControls(Composite parent, FormToolkit tk) {
-		this.tk = tk;
+	public void createControls(Composite parent, FormToolkit toolkit) {
+		this.wf = toolkit;
 	}
 
 	/**
@@ -137,7 +139,6 @@ public abstract class AbstractExpressionEditor implements IExpressionEditor {
 		return fManager;
 	}
 
-
 	/**
 	 * @see org.eclipse.bpel.ui.expressions.IExpressionEditor#setExpressionType(java.lang.String)
 	 */
@@ -161,4 +162,5 @@ public abstract class AbstractExpressionEditor implements IExpressionEditor {
 	protected Object getModelObject() {
 		return fModelObject;
 	}
+
 }

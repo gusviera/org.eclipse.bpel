@@ -61,8 +61,8 @@ public class DefaultExpressionEditor extends AbstractExpressionEditor {
 	 */
 	
 	@Override
-	public void createControls(Composite parent, FormToolkit tk) {
-		super.createControls(parent, tk);
+	public void createControls(Composite parent, FormToolkit toolkit) {
+		super.createControls(parent, toolkit);
 		createEditor(parent);
 	}
 
@@ -90,7 +90,7 @@ public class DefaultExpressionEditor extends AbstractExpressionEditor {
 	protected void createEditor(Composite parent) {
 		IEditorInput input = new TextEditorInput( fBody, getModelObject(), getExprType() );
 		
-		editorComposite = tk.createComposite(parent, SWT.BORDER);
+		editorComposite = wf.createComposite(parent, SWT.BORDER);
 		editorComposite.setLayout( new FillLayout() );		
 		editor = (TextEditor) createEditor(TextEditor.TEXT_EDITOR_ID, 
 				input, 

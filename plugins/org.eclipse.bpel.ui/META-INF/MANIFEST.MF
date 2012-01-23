@@ -32,7 +32,8 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.4.0,4.0.0)",
  org.eclipse.wst.common.emfworkbench.integration,
  org.eclipse.jem.util,
  org.eclipse.wst.common.project.facet.core,
- org.eclipse.bpel.runtimes
+ org.eclipse.bpel.runtimes,
+ org.eclipse.bpel.common.wsdl
 Bundle-ActivationPolicy: lazy
 Export-Package: org.eclipse.bpel.ui,
  org.eclipse.bpel.ui.actions,
@@ -46,6 +47,7 @@ Export-Package: org.eclipse.bpel.ui,
  org.eclipse.bpel.ui.details.providers,
  org.eclipse.bpel.ui.details.tree,
  org.eclipse.bpel.ui.dialogs,
+ org.eclipse.bpel.ui.dnd,
  org.eclipse.bpel.ui.editors,
  org.eclipse.bpel.ui.editors.xpath,
  org.eclipse.bpel.ui.editors.xpath.rules,
