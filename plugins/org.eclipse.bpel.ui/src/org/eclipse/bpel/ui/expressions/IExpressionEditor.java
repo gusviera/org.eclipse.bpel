@@ -37,9 +37,9 @@ public interface IExpressionEditor {
 	/**
 	 * Creates the editor widgets.
 	 * @param parent the parent composite
-	 * @param section the section
+	 * @param tk a {@link FormToolkit}, retrieved for example from the host {@link BPELPropertySection}
 	 */
-	void createControls(Composite parent, BPELPropertySection section);
+	void createControls(Composite parent, FormToolkit tk);
 
 	/**
 	 * Dispose of the editor.
@@ -154,9 +154,4 @@ public interface IExpressionEditor {
 	 */
 	void markAsClean();
 
-	/**
-	 * @param composite
-	 * @param tk
-	 */
-	public void createControls(Composite composite, FormToolkit tk);
 }
